@@ -1,0 +1,228 @@
+/* -------------------------------------------------------------------------- */
+/* Layouts: Footer                                                            */
+/* -------------------------------------------------------------------------- */
+
+.footer {
+  $f: &;
+  overflow: hidden;
+  position: absolute;
+  z-index: zi(footer);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 96px;
+  padding-bottom: 104px;
+  background: linear-gradient(183.41deg, color(blue, 4) -8.57%, color(blue, 5) 82.96%);
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: zi(footer-bg);
+    bottom: -38px;
+    left: -20px;
+    width: 132px;
+    height: 115px;
+    background: url(../img/bg/dot-pattern-1.svg) no-repeat center/100%;
+    @include large {
+      width: 106px;
+      height: 91px;
+      bottom: -32px;
+      left: -16px;
+    }
+    @include medium {
+      width: 90px;
+    }
+    @include small {
+      width: 70px;
+      left: -8px;
+      bottom: -36px;
+    }
+  }
+  @include large {
+    padding-top: 72px;
+    padding-bottom: 80px;
+  }
+  @include medium {
+    position: relative;
+  }
+  @include small {
+    padding-top: 36px;
+    padding-bottom: 56px;
+  }
+  .container {
+    @include clearfix;
+    position: relative;
+  }
+  &__menu {
+    float: right;
+    color: color(white);
+    font-size: 0;
+    padding-right: 48px;
+    @include medium {
+      padding-right: 0;
+      margin-bottom: 64px;
+      float: none;
+    }
+    @include small {
+      margin-bottom: 36px;
+    }
+  }
+  &__list {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 144px;
+    @include large {
+      margin-right: 80px;
+    }
+    @include medium {
+      margin-right: 120px;
+    }
+    @include small {
+      display: block;
+      margin-right: 0;
+      &.active {
+        #{$f} {
+          &__title {
+            &::after {
+              transform: rotateX(180deg);
+            }
+          }
+          &__item {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    position: relative;
+    margin-bottom: 24px;
+    @include large {
+      margin-bottom: 20px;
+      @include font-size(18);
+    }
+    @include small {
+      margin-bottom: 0;
+      cursor: pointer;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      @include remove-tap-highlight;
+      &::after {
+        content: "\e904";
+        font-family: 'Trafalgar' !important;
+        speak: never;
+        font-size: 20px;
+        font-weight: normal;
+        font-variant: normal;
+        font-style: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -8px;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+  &__nav {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    @include small {
+      display: none;
+      padding-top: 4px;
+      padding-bottom: 12px;
+    }
+  }
+  &__item {
+    margin-bottom: 16px;
+    @include font-size(18);
+    @include large {
+      margin-bottom: 12px;
+      @include font-size(16);
+    }
+    @include small {
+      opacity: 0;
+      margin-bottom: 8px;
+      transform: translateX(8px);
+      transition: all 0.5s ease;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    @include small {
+      display: block;
+    }
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-bottom: 1px solid color(white);
+      transition: transform .45s ease;
+      transform: scaleX(0);
+      transform-origin: right center;
+      @include medium {
+        display: none;
+      }
+    }
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+    }
+  }
+  &__about {
+    float: left;
+    max-width: 392px;
+    color: color(white);
+    @include medium {
+      float: none;
+      max-width: initial;
+    }
+  }
+  &__logo {
+    display: inline-block;
+    margin-bottom: 32px;
+    height: 40px;
+    @include large {
+     margin-bottom: 24px;
+    }
+    @include small {
+      height: 36px;
+    }
+    &__el {
+      height: 100%;
+    }
+  }
+  &__description {
+    margin-bottom: 32px;
+    color: color(white);
+    @include font-size(18);
+    @include large {
+     margin-bottom: 24px;
+     @include font-size(16);
+    }
+  }
+  &__copyright {
+    margin-bottom: 0;
+    color: color(white);
+    @include medium {
+      @include font-size(14);
+    }
+  }
+}

@@ -1,0 +1,169 @@
+/* -------------------------------------------------------------------------- */
+/* Layouts: Services                                                          */
+/* -------------------------------------------------------------------------- */
+
+.services {
+  $s: &;
+  padding-top: 144px;
+  padding-bottom: 108px;
+  overflow: hidden;
+  @include large {
+    padding-top: 112px;
+    padding-bottom: 76px;
+  }
+  @include medium {
+    padding-top: 80px;
+    padding-bottom: 56px;
+  }
+  @include small {
+    padding-top: 80px;
+    padding-bottom: 48px;
+  }
+  @include x-small {
+    padding-top: 72px;
+    padding-bottom: 40px;
+  }
+  &__head {
+    position: relative;
+    z-index: zi(services-head);
+    text-align: center;
+    max-width: 952px;
+    margin: 0 auto 54px;
+    @include medium {
+      margin-bottom: 48px;
+    }
+    @include small {
+      margin-bottom: 40px;
+    }
+    @include x-small {
+      margin-bottom: 24px;
+    }
+  }
+  .text-title {
+    margin-bottom: 40px;
+    @include large {
+      margin-bottom: 32px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
+  }
+  &__desc {
+    margin-bottom: 0;
+    @include font-size(18);
+    @include medium {
+      @include font-size(16);
+    }
+  }
+  &__body {
+    max-width: 1122px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: -506px;
+      top: -240px;
+      z-index: zi(services-bg);
+      width: 1118px;
+      height: 968px;
+      background: url(../img/bg/wave-left.svg) no-repeat center/100%;
+      @include large {
+        width: 800px;
+        height: 693px;
+        top: -168px;
+        left: -280px;
+      }
+      @include medium {
+        width: 640px;
+        height: 555px;
+        top: -140px;
+        left: -160px;
+      }
+      @include small {
+        width: 480px;
+        height: 416px;
+        top: -100px;
+        left: -220px;
+      }
+      @include retina {
+        left: -280px;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: -48px;
+      top: 328px;
+      z-index: zi(services-bg);
+      width: 130px;
+      height: 115px;
+      background: url(../img/bg/dot-pattern-1.svg) no-repeat center/100%;
+      @include large {
+        width: 112px;
+        height: 98px;
+        right: -24px;
+      }
+      @include medium {
+        width: 88px;
+        height: 76px;
+        top: 300px;
+      }
+      @include small {
+        width: 72px;
+        height: 62px;
+        right: -20px;
+        top: 132px;
+      }
+    }
+  }
+  &__list {
+    position: relative;
+    z-index: zi(services-list);
+    margin: 0 -18px 54px;
+    @include clearfix;
+    @include medium {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    @include x-small {
+      font-size: 0;
+      margin: 0 -24px 32px;
+      padding: 16px 24px 24px;
+      @include scroll('x', 'touch', 'hide');
+    }
+  }
+  #{$s} {
+    &__item {
+      padding: 18px;
+      float: left;
+      width: 33.3333333%;
+      @include medium {
+        width: 50%;
+        padding: 16px;
+      }
+      @include x-small {
+        padding: 0;
+        margin-right: 16px;
+        float: none;
+        width: 100%;
+        max-width: 280px;
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal;
+        &:last-child {
+          margin-right: 24px;
+        }
+      }
+      @include retina {
+        max-width: 240px;
+      }
+    }
+  }
+  &__link {
+    text-align: center;
+    position: relative;
+    z-index: zi(services-link);
+  }
+}

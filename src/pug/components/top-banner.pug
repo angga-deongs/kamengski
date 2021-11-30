@@ -1,0 +1,16 @@
+//- ------------------------------------------------------------------------ -//
+//- Top Banner Item                                                          -//
+//- ------------------------------------------------------------------------ -//
+
+//top-banner-item
+.top-banner__item
+  .top-banner__box
+    .top-banner__img
+      img.top-banner__img__el(src="assets/img/dummy/"+data.img, alt=data.title)/
+    .top-banner__txt
+      h1.top-banner__title
+        | !{data.title}
+      h4.top-banner__description
+        | !{data.description}
+      a.btn.btn--primary(href=data.link)
+        | !{data.linkText}

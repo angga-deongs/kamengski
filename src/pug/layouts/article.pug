@@ -1,0 +1,19 @@
+//- ------------------------------------------------------------------------ -//
+//- Article                                                                  -//
+//- ------------------------------------------------------------------------ -//
+
+//article
+.article
+  .container
+    h2.text-title
+      | !{dataArticle.title}
+    .article__content
+      //article-list
+      .article__list.js-article-list
+        each val in dataArticle.list
+          -
+            data = val
+          include ../components/article.pug
+      .article__more
+        ='\n'
+        a.btn.btn--secondary(href=dataArticle.action.to) !{dataArticle.action.text}

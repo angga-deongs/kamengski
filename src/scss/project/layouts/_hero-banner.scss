@@ -1,0 +1,118 @@
+/* -------------------------------------------------------------------------- */
+/* Layouts: Hero Banner                                                       */
+/* -------------------------------------------------------------------------- */
+
+.hero-banner {
+  $hb: &;
+  position: relative;
+  &__item {
+    &::before {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 1s ease, transform 2s ease;
+      transition-delay: 0s;
+    }
+  }
+  &__img__el {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 3s ease;
+    transition-delay: 0s;
+  }
+  &__title,
+  &__desc,
+  &__btn {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  &__title {
+    transition: all 1.75s ease;
+    transition-delay: 0s;
+  }
+  &__desc {
+    transition: all 1.5s ease;
+    transition-delay: 0s;
+  }
+  &__btn {
+    transition: opacity 1.25s ease, transform 1.25s ease;
+    transition-delay: 0s;
+  }
+  &--single,
+  .owl-item.active {
+    #{$hb} {
+      &__item {
+        &::before {
+          opacity: 1;
+          transform: translateX(0);
+          transition: opacity 1s ease .75s, transform 2s ease;
+          @include medium {
+            transition-delay: 1.75s;
+          }
+        }
+      }
+      &__img__el {
+        opacity: 1;
+        transform: scaleX(1);
+        transition: opacity 2s ease, transform 2.75s ease;
+        transition-delay: 1.75s;
+        @include medium {
+          transition-delay: 1s;
+        }
+      }
+      &__title,
+      &__desc,
+      &__btn {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      &__title {
+        transition-delay: 1s;
+        @include medium {
+          transition-delay: 1.75s;
+        }
+      }
+      &__desc {
+        transition-delay: 1.4s;
+        @include medium {
+          transition-delay: 2s;
+        }
+      }
+      &__btn {
+        transition-delay: 1.8s;
+        @include medium {
+          transition-delay: 2.25s;
+        }
+      }
+    }
+  }
+  &.owl-carousel {
+    .owl-dot {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      opacity: 0.2;
+      background-color: color(blue, 1);
+      transition: all .5s ease;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        width: 32px;
+        opacity: 1;
+      }
+      &s {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        line-height: 1;
+        transform: translateX(-50%);
+        @include small {
+          bottom: 8px;
+        }
+      }
+    }
+  }
+}

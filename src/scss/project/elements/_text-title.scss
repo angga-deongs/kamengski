@@ -1,0 +1,40 @@
+/* -------------------------------------------------------------------------- */
+/* Components: Text Title                                                     */
+/* -------------------------------------------------------------------------- */
+
+.text {
+  &-title {
+    position: relative;
+    @include medium {
+      @include font-size(32);
+    }
+    @include small {
+      @include font-size(24);
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 56px;
+      margin: 32px auto 0;
+      border-radius: 1px;
+      border-bottom: 2px solid color(black);
+      @include large {
+        margin-top: 24px;
+      }
+      @include small {
+        margin-top: 20px;
+      }
+    }
+    &--white {
+      color: color(white);
+      &::after {
+        border-bottom-color: color(white);
+      }
+    }
+    &--left {
+      &::after {
+        margin-left: 0;
+      }
+    }
+  }
+}

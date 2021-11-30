@@ -1,0 +1,23 @@
+//- ------------------------------------------------------------------------ -//
+//- Article Item                                                             -//
+//- ------------------------------------------------------------------------ -//
+
+//article-item
+.article__item
+  .article__box
+    ='\n'
+    a.article__link(href=data.to)
+      | !{data.title}
+    .article__img
+      ='\n'
+      img.article__img__el(src="assets/img/dummy/"+data.img, alt=data.title)/
+    .article__txt
+      h3.article__txt__title
+        | !{data.title}
+      p.article__txt__description
+        | !{data.description}
+      .article__txt__btn
+        ='\n'
+        button.btn.btn--arrow
+          | Read more
+          i.fi-arrow-right

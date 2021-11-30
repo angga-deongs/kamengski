@@ -1,0 +1,61 @@
+//- ------------------------------------------------------------------------ -//
+//- Header                                                                   -//
+//- ------------------------------------------------------------------------ -//
+
+-
+  dataHeader = {
+    logo: {
+      to: 'index.html',
+      src: 'trafalgar.svg',
+      alt: 'trafalgar'
+    },
+    menu: [
+      {
+        to: 'index.html',
+        text: 'Home',
+        classActive: 'home'
+      },
+      {
+        to: 'find-a-doctor.html',
+        text: 'Find a doctor',
+        classActive: 'find-a-doctor'
+      },
+      {
+        to: 'apps.html',
+        text: 'Apps',
+        classActive: 'apps'
+      },
+      {
+        to: 'testimonials.html',
+        text: 'Testimonials',
+        classActive: 'testimonials'
+      },
+      {
+        to: 'about-us.html',
+        text: 'About Us',
+        classActive: 'about-us'
+      },
+    ]
+  }
+
+//header
+.header
+  .container
+    .header__content
+      ='\n'
+      a.header__logo(href=dataHeader.logo.to)
+        ='\n'
+        img.header__logo__el(src='assets/img/logo/'+dataHeader.logo.src, alt=dataHeader.logo.alt)/
+        ='\n'
+      ='\n'
+      button.burger-menu.js-nav(type='button')
+        each val in [1, 2, 3]
+          ='\n'
+          span.burger-menu__bar
+        ='\n'
+      .header__menu.js-mobile-menu
+        ul.header__nav
+          each val in dataHeader.menu
+            li.header__nav__item(class=(navActive == val.classActive ? 'header__nav__item--active' : ''))
+              ='\n'
+              a.header__nav__link(href=val.to) !{val.text}

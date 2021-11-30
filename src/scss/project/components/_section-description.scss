@@ -1,0 +1,153 @@
+/* -------------------------------------------------------------------------- */
+/* Components Section Description                                             */
+/* -------------------------------------------------------------------------- */
+
+.section-description {
+  $sd: &;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  @include large {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  @include medium {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  @include small {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  @include x-small {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  &__box {
+    @include clearfix;
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__img {
+    float: left;
+    width: 50%;
+    @include medium {
+      float: none;
+      width: 100%;
+      margin-bottom: 48px;
+    }
+    @include small {
+      margin-bottom: 32px;
+    }
+    &__el {
+      display: block;
+      max-width: 650px;
+      margin-left: -104px;
+      @include mq(1320px) {
+        max-width: 560px;
+        margin-left: -64px;
+      }
+      @include large {
+        margin-left: 0;
+        max-width: 480px;
+      }
+      @include medium {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include small {
+        max-width: 90%;
+      }
+      @include x-small {
+        max-width: 100%;
+      }
+    }
+  }
+  &__txt {
+    width: 50%;
+    min-height: 476px;
+    padding-left: 142px;
+    float: left;
+    display: table;
+    @include large {
+      max-width: initial;
+      min-height: 350px;
+      padding-left: 40px;
+    }
+    @include medium {
+      float: none;
+      width: 100%;
+      min-height: initial;
+      display: block;
+      padding-left: 0;
+    }
+    &__wrapper {
+      width: 100%;
+      display: table-cell;
+      vertical-align: middle;
+      @include medium {
+        display: block;
+      }
+    }
+  }
+  &__desc {
+    @include font-size(18);
+    margin-bottom: 40px;
+    @include medium {
+      margin-bottom: 32px;
+    }
+    @include small {
+      @include font-size(16);
+    }
+  }
+  .text-title {
+    margin-bottom: 40px;
+    @include large {
+      margin-bottom: 32px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
+  }
+  // -- modifier
+  &--reverse {
+    &::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: -58px;
+      z-index: zi(section-description-bg);
+      width: 72px;
+      height: 115px;
+      background: url(../img/bg/dot-pattern-1.svg) no-repeat 100%;
+      @include small {
+        transform: scale(.6);
+        transform-origin: center right;
+      }
+    }
+    #{$sd}__img {
+      float: right;
+      @include small {
+        float: none;
+      }
+      &__el {
+        margin-left: auto;
+      }
+    }
+    #{$sd}__txt {
+      padding-left: 0;
+      padding-right: 142px;
+      @include large {
+        padding-right: 40px;
+      }
+      @include medium {
+        padding-right: 32px;
+      }
+      @include small {
+        padding-right: 0;
+      }
+    }
+  }
+}

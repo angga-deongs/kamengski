@@ -1,0 +1,180 @@
+/* -------------------------------------------------------------------------- */
+/* Layouts: Article                                                           */
+/* -------------------------------------------------------------------------- */
+
+.article {
+  $a: &;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  overflow: hidden;
+  position: relative;
+  @include large {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  @include medium {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  @include small {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: zi(article-bg);
+    bottom: -40px;
+    right: 92px;
+    width: 132px;
+    height: 115px;
+    background: url(../img/bg/dot-pattern-1.svg) no-repeat center/100%;
+    @include large {
+      width: 112px;
+      height: 98px;
+      bottom: -32px;
+    }
+    @include medium {
+      width: 88px;
+      height: 76px;
+      bottom: -28px;
+    }
+    @include small {
+      width: 72px;
+      height: 62px;
+      bottom: -24px;
+    }
+  }
+  .container {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: zi(article-bg);
+      top: 120px;
+      left: -4px;
+      width: 132px;
+      height: 115px;
+      background: url(../img/bg/dot-pattern-1.svg) no-repeat center/100%;
+      @include large {
+        width: 112px;
+        height: 98px;
+        top: 108px;
+        left: -12px;
+      }
+      @include medium {
+        width: 88px;
+        height: 76px;
+        top: 112px;
+        left: 2px;
+      }
+      @include small {
+        width: 72px;
+        height: 62px;
+        top: 84px;
+      }
+      @include retina {
+        top: 116px;
+      }
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: zi(article-bg);
+      top: 0;
+      right: -540px;
+      width: 900px;
+      height: 780px;
+      background: url(../img/bg/wave-right.svg) no-repeat center/100%;
+      @include large {
+        width: 800px;
+        height: 692px;
+        right: -480px;
+      }
+      @include medium {
+        width: 740px;
+        height: 640px;
+        right: -448px;
+      }
+      @include small {
+        width: 640px;
+        height: 554px;
+        right: -368px;
+      }
+      @include retina {
+        width: 580px;
+        height: 502px;
+        top: 24px;
+      }
+    }
+  }
+  .text-title {
+    text-align: center;
+    margin-bottom: 72px;
+    @include large {
+      margin-bottom: 56px;
+    }
+    @include medium {
+      margin-bottom: 40px;
+    }
+    @include small {
+      margin-bottom: 32px;
+    }
+  }
+  &__content {
+    max-width: 1122px;
+    margin: 0 auto;
+  }
+  &__list {
+    @include clearfix;
+    margin: 0 -18px 72px;
+    position: relative;
+    z-index: zi(article-list);
+    @include medium {
+      font-size: 0;
+      margin: 0 -32px 32px;
+      padding: 16px 32px 24px;
+      @include scroll('x', 'touch', 'hide');
+    }
+    @include small {
+      margin: 0 -24px 24px;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  #{$a} {
+    &__item {
+      float: left;
+      width: 33.3333333%;
+      padding-left: 18px;
+      padding-right: 18px;
+      @include medium {
+        padding-left: 0;
+        padding-right: 0;
+        float: none;
+        margin-right: 32px;
+        display: inline-block;
+        vertical-align: middle;
+        white-space: normal;
+        width: 100%;
+        max-width: 320px;
+      }
+      @include small {
+        max-width: 280px;
+        margin-right: 24px;
+      }
+      @include x-small {
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 24px;
+        }
+      }
+      @include retina {
+        max-width: 240px;
+      }
+    }
+    &__more {
+      text-align: center;
+    }
+  }
+}
