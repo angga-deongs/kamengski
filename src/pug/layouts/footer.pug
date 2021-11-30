@@ -1,109 +1,12 @@
-//- ------------------------------------------------------------------------ -//
-//- Footer                                                                   -//
-//- ------------------------------------------------------------------------ -//
+//-------------------------------------------------------------------------------
+  @name: Footer
+  -------------------------------------------------------------------------------//
 
 -
   dataFooter = {
-    logo: {
-      to: 'index.html',
-      src: 'trafalgar-white.svg',
-      alt: 'trafalgar'
-    },
-    description: 'Trafalgar provides progressive, and affordable healthcare, accessible on mobile and online for everyone',
-    copyright: '&copy;Trafalgar PTY LTD 2020. All rights reserved',
-    menu: [
-      {
-        title: 'Company',
-        link: '#',
-        nav: [
-          {
-            title: 'About',
-            link: '#'
-          },
-          {
-            title: 'Testimonials',
-            link: '#'
-          },
-          {
-            title: 'Find a doctor',
-            link: '#'
-          },
-          {
-            title: 'Apps',
-            link: '#'
-          }
-        ]
-      },
-      {
-        title: 'Region',
-        link: '#',
-        nav: [
-          {
-            title: 'Indonesia',
-            link: '#'
-          },
-          {
-            title: 'Singapore',
-            link: '#'
-          },
-          {
-            title: 'Hongkong',
-            link: '#'
-          },
-          {
-            title: 'Canada',
-            link: '#'
-          }
-        ]
-      },
-      {
-        title: 'Help',
-        link: '#',
-        nav: [
-          {
-            title: 'Help center',
-            link: '#'
-          },
-          {
-            title: 'Contact support',
-            link: '#'
-          },
-          {
-            title: 'Instructions',
-            link: '#'
-          },
-          {
-            title: 'How it works',
-            link: '#'
-          }
-        ]
-      }
-    ]
+
   }
 
 //footer
 .footer
   .container
-    .footer__menu
-      each val in dataFooter.menu
-        .footer__list.js-footer-accordion
-          h5.footer__title
-            ='\n'
-            a.footer__link(href=val.link)
-              | !{val.title}
-          ul.footer__nav
-            each item in val.nav
-              li.footer__item
-                ='\n'
-                a.footer__link(href=item.link)
-                  | !{item.title}
-    .footer__about
-      ='\n'
-      a.footer__logo(href=dataFooter.logo.to)
-        ='\n'
-        img.footer__logo__el(src='assets/img/logo/'+dataFooter.logo.src, alt=dataFooter.logo.alt)/
-        ='\n'
-      p.footer__description
-        | !{dataFooter.description}
-      p.footer__copyright
-        | !{dataFooter.copyright}

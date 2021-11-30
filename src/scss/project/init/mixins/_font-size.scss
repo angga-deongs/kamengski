@@ -3,6 +3,6 @@
 /* -------------------------------------------------------------------------- */
 
 @mixin font-size($name) {
-  font-size: fz(f#{$name});
-  line-height: lh(f#{$name});
+  font-size: fz(#{$name});
+  line-height: lh(#{$name});
 }
