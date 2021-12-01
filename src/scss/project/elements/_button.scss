@@ -4,17 +4,35 @@
 
 .btn {
   outline: 0;
+  border: 0;
+  padding: 0;
   display: inline-block;
   vertical-align: middle;
-  min-width: 200px;
-  padding: 13px 40px;
-  border-radius: 55px;
   text-decoration: none;
   cursor: pointer;
-  text-align: center;
   font-weight: fw(bold);
   background-color: transparent;
-  border: 1px solid transparent;
   transition: all .3s ease;
   @include remove-tap-highlight;
+  &--primary {
+    text-transform: uppercase;
+    position: relative;
+    @include font-size(h5);
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      transition: transform .45s ease;
+      transform-origin: right center;
+      border-bottom: 1px solid color(black);
+    }
+    &:hover {
+      &::after {
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+    }
+  }
 }

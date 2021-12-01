@@ -3,5 +3,21 @@
 /* -------------------------------------------------------------------------- */
 
 .product {
-
+  $p: &;
+  &__filter {
+    text-align: right;
+    margin-bottom: 18px;
+  }
+  &__list {
+    @include clearfix;
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+  #{$p} {
+    &__item {
+      width: 25%;
+      float: left;
+      padding: 24px 14px;
+    }
+  }
 }

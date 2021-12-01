@@ -3,4 +3,38 @@
 /* -------------------------------------------------------------------------- */
 
 .header {
+  &__logo {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: zi(header-logo);
+  }
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    z-index: zi(header-list);
+    position: fixed;
+    top: 54px;
+    &:first-child {
+      left: 32px;
+    }
+    &:last-child {
+      right: 32px;
+      text-align: right;
+    }
+  }
+  &__item {
+    transition: all .3s ease;
+    &--active,
+    &:hover {
+      color: color(primary);
+    }
+  }
+  &__link {
+    text-decoration: none;
+    font-family: ff(family-title);
+    @include font-size(h5);
+  }
 }

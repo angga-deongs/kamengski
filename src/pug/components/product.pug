@@ -5,10 +5,11 @@
 //product-item
 .product__item
   .product__box
+    ='\n'
+    a.product__link(href='product-detail.html') !{data.title}
     .product__img
       ='\n'
-      img(src='assets/img/dummy/'+data.img, alt=data.title)/
+      img.product__img__el(src='assets/img/dummy/'+data.img, alt=data.title)/
     .product__hover
-      .product__txt
-        h3.product__title !{data.title}
-        h5.product__price !{data.price}
+      h3.product__title !{data.title}
+      h5.product__price Rp!{data.price}
