@@ -4,3 +4,11 @@
 
 //feed-instagram
 .feed-instagram
+  .container
+    h2.feed-instagram__title !{dataFeedInstagram.title}
+    //feed-instagram-list
+    .feed-instagram__list
+      each val in dataFeedInstagram.list
+        .feed-instagram__item
+          a.feed-instagram__link(href='#', target='_blank') !{dataFeedInstagram.title}
+          img.feed-instagram__img(src='assets/img/dummy/'+val.img, alt=dataFeedInstagram.title)/

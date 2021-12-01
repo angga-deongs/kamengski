@@ -1,0 +1,16 @@
+extends ../templates/default.pug
+
+//- Head
+block siteHeader
+  -
+    navActive = "product";
+    siteTitle = 'Product';
+
+//- Body
+block siteContent
+  //- Product Detail
+  include product/product-detail.pug
+  //- Related Product
+  include product/related-product.pug
+  //- Contact
+  include product/contact.pug

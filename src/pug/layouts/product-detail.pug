@@ -1,0 +1,22 @@
+//-------------------------------------------------------------------------------
+  @name: Products Detail
+  -------------------------------------------------------------------------------//
+
+//product-detail
+.product-detail
+  .container
+    .product-detail__left
+      .product-detail__img
+        img.product-detail__img__el(src='assets/img/dummy/product-1.png', alt='Kamengski')/
+      .product-detail__list-img
+        each val in data.list
+          .product-detail__list-img__item
+            img.product-detail__list-img__el(src='assets/img/dummy/'+val.img, alt='Kamengski')/
+    .product-detail__right
+      h1.product-detail__title !{data.title}
+      h2.product-detail__price !{data.price}
+      .product-detail__desc
+        p !{data.desc}
+      .product-detail__action
+        button.product-detail__size-chart(type='button') Size Chart
+        a.product-detail__link(href='#', target='_blank') Buy On Tokopedia

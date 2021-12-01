@@ -4,3 +4,12 @@
 
 //contact
 .contact
+  .container
+    .contact__desc
+      p !{dataContact.desc}
+    .contact__info
+      p !{dataContact.location}
+      ul
+        each val in dataContact.list
+          li
+            a(href=val.to) !{val.title}

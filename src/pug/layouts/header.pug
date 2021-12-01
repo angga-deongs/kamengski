@@ -4,9 +4,40 @@
 
 -
   dataHeader = {
-
+    logo: 'kamengski.svg',
+    menuLeft: [
+      {
+        to: '#product',
+        title: 'Product'
+      },
+      {
+        to: '#story',
+        title: 'Story'
+      }
+    ],
+    menuRight: [
+      {
+        to: '#update',
+        title: 'Update'
+      },
+      {
+        to: '#contact',
+        title: 'Contact'
+      }
+    ]
   }
 
 //header
 .header
-  .container
+  .header__logo
+    ='\n'
+    img.header__logo__el(src='assets/img/logo/'+dataHeader.logo, alt='kamengski')/
+  .header__menu
+    ul.header__list
+      each val in dataHeader.menuLeft
+        li.header__item
+          a.header__link(href=val.to) !{val.title}
+    ul.header__list
+      each val in dataHeader.menuRight
+        li.header__item
+          a.header__link(href=val.to) !{val.title}

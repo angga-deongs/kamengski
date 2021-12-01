@@ -2,10 +2,12 @@
 /* Variables: Typography                                                      */
 /* -------------------------------------------------------------------------- */
 
-$font-main: 'Mulish', sans-serif;
+$font-main: 'Roboto';
+$font-title: 'KamengskiDraft01.2-Display';
 
 $font: (
   family-main: $font-main,
+  family-title: $font-title,
   h1: (
     font-size: 3.8rem,
     line-height: 4.6rem

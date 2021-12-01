@@ -3,4 +3,12 @@
   -------------------------------------------------------------------------------//
 
 //product-item
-.product-item
+.product__item
+  .product__box
+    .product__img
+      ='\n'
+      img(src='assets/img/dummy/'+data.img, alt=data.title)/
+    .product__hover
+      .product__txt
+        h3.product__title !{data.title}
+        h5.product__price !{data.price}

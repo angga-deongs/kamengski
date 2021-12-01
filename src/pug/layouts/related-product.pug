@@ -5,3 +5,12 @@
 //related-product
 .related-product
   .container
+    .related-product__head
+      h2.related-product__title Related Product
+      ='\n'
+      a.related-product__link(href='index.html') See All
+    .related-product__list
+      each val in dataRelatedProduct.list
+        -
+          data = val
+        include ../components/product.pug
