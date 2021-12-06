@@ -3,5 +3,22 @@
 /* -------------------------------------------------------------------------- */
 
 .footer {
-
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: color(primary);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .container {
+    @include clearfix;
+  }
+  &__copyright {
+    float: left;
+    margin-bottom: 0;
+  }
+  &__info {
+    float: right;
+    margin-bottom: 0;
+  }
 }

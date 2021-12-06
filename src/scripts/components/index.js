@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import Services from "./Services";
 import Article from "./Article";
 import Testimony from "./Testimony";
+import Story from "./Story";
 
 export {
   WindowScroll,
@@ -20,5 +21,5 @@ export {
   Footer,
   Services,
   Article,
-  Testimony
+  Story
 };

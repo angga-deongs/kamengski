@@ -4,6 +4,7 @@
 
 .product {
   $p: &;
+  padding-bottom: 80px;
   &__filter {
     text-align: right;
     margin-bottom: 18px;

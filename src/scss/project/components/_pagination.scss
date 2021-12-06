@@ -1,0 +1,42 @@
+/* -------------------------------------------------------------------------- */
+/* Components: Pagination                                                     */
+/* -------------------------------------------------------------------------- */
+
+.pagination {
+  text-align: center;
+  margin-top: 96px;
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    font-size: 0;
+  }
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 24px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a, span {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 26px;
+    padding: 3px 0;
+    border: 1px solid color(black);
+    border-radius: 50%;
+    @include font-size(h6);
+  }
+  a {
+    text-decoration: none;
+    transition: all .3s ease;
+    &:hover {
+      background-color: color(primary);
+    }
+  }
+  .current {
+    background-color: color(primary);
+  }
+}

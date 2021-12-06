@@ -3,5 +3,53 @@
 /* -------------------------------------------------------------------------- */
 
 .contact {
-
+  padding-top: 36px;
+  padding-bottom: 104px;
+  border-top: 1px solid color(black);
+  .container {
+    @include clearfix;
+  }
+  &__desc {
+    width: 60%;
+    float: left;
+    max-width: 532px;
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__info {
+    width: 40%;
+    max-width: 324px;
+    float: right;
+    text-align: right;
+    p {
+      margin-bottom: 0;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      font-size: 0;
+    }
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 8px;
+      padding-left: 8px;
+      border-right: 1px solid color(black);
+      &:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
+    a {
+      text-decoration: none;
+      transition: all .3s ease;
+      &:hover {
+        color: color(primary);
+      }
+    }
+  }
 }

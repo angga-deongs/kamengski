@@ -13,7 +13,8 @@ import {
   Footer,
   Services,
   Article,
-  Testimony
+  Testimony,
+  Story
 } from 'components';
 
 // --- App
@@ -52,6 +53,7 @@ const App = (() => {
       Services.init();
       Article.init();
       Testimony.init();
+      Story.init();
 
     })(jQuery);
   }

@@ -5,7 +5,9 @@
 //feed-instagram
 .feed-instagram
   .container
-    h2.feed-instagram__title !{dataFeedInstagram.title}
+    h2.feed-instagram__title
+      span @
+      | !{dataFeedInstagram.title}
     //feed-instagram-list
     .feed-instagram__list
       each val in dataFeedInstagram.list

@@ -3,5 +3,32 @@
 /* -------------------------------------------------------------------------- */
 
 .feed-instagram {
-
+  padding-top: 160px;
+  padding-bottom: 140px;
+  &__title {
+    font-family: ff(family-title);
+    margin-bottom: 40px;
+    span {
+      font-family: ff(family-main);
+    }
+  }
+  &__list {
+    @include clearfix;
+    margin-left: -14px;
+    margin-right: -14px;
+  }
+  &__item {
+    width: 25%;
+    float: left;
+    padding: 0 14px;
+    position: relative;
+  }
+  &__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
 }

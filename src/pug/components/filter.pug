@@ -1,0 +1,10 @@
+//filter
+.filter
+  .filter__wrapper
+    ul.filter__list
+      each val in dataProduct.filter
+        li.filter__item
+          ='\n'
+          a.filter__link(href='index.html') !{val.title}
+          ='\n'
+          span.filter__count !{val.count}
