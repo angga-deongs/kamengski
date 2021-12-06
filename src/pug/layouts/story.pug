@@ -6,8 +6,8 @@
 .story
   .container
     .story__list.js-story-list
-      each val in dataStory.list
-        .story__item
+      each val, index in dataStory.list
+        .story__item(data-index=index)
           .story__title
             ='\n'
             button.story__btn(type='button') !{val.title}

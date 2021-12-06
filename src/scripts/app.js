@@ -48,11 +48,11 @@ const App = (() => {
       WindowScroll.init();
       Header.init();
       Footer.init();
-      HeroBanner.init();
+      // HeroBanner.init();
 
-      Services.init();
-      Article.init();
-      Testimony.init();
+      // Services.init();
+      // Article.init();
+      // Testimony.init();
       Story.init();
 
     })(jQuery);

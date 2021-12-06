@@ -22,20 +22,21 @@ const WindowScroll = (() => {
 
     // --- Scroll Down
     if (_scrollTop > _lastScrollTop && _scrollTop > _headerHeight) {
-      $('body').addClass('window-scrolled');
+      $('body').addClass('window-scrolldown');
     } else {
       // --- Scroll Up
       if (_scrollTop + $(window).height() < $(document).height()) {
-        $('body').removeClass('window-scrolled');
-      }
-      if (_scrollTop > _headerHeight) {
-        $('body').addClass('window-on-scroll');
-      } else {
-        $('body').removeClass('window-on-scroll');
+        $('body').removeClass('window-scrolldown');
       }
     }
 
     _lastScrollTop = _scrollTop;
+
+    if ($(window).scrollTop() > 20) {
+      $('body').addClass('window-scrolled');
+    } else {
+      $('body').removeClass('window-scrolled');
+    }
 
   }
 

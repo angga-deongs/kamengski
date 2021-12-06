@@ -7,8 +7,13 @@
     position: fixed;
     top: 24px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) ;
     z-index: zi(header-logo);
+    transform-origin: center center;
+    transition: all .3s ease;
+    .window-scrolled & {
+      transform: translateX(-50%) scale(.6);
+    }
   }
   &__list {
     list-style: none;
