@@ -11,6 +11,20 @@ import {
 // --- Header
 const Header = (() => {
 
+  // --- handleClick
+  const handleClick = () => {
+    const _selector = $('.js-header-menu button.header__link');
+    _selector.on('click', (e) => {
+      let _target = $(e.currentTarget).attr('data-target');
+      let _offsetTop = $('#'+_target).offset().top;
+
+      $('html, body').animate({
+        scrollTop: _offsetTop
+      }, 'slow');
+      e.preventDefault();
+    });
+  }
+
   // --- handleMobileNav
   const handleMobileNav = () => {
     $('.js-nav').on('click', (e) => {
@@ -40,6 +54,7 @@ const Header = (() => {
 
   // --- init
   const init = () => {
+    handleClick();
     handleMobileNav();
 
   }

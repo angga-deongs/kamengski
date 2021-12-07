@@ -3,7 +3,7 @@
   -------------------------------------------------------------------------------//
 
 //feed-instagram
-.feed-instagram
+.feed-instagram#update
   .container
     h2.feed-instagram__title
       span @
@@ -12,5 +12,7 @@
     .feed-instagram__list
       each val in dataFeedInstagram.list
         .feed-instagram__item
+          ='\n'
           a.feed-instagram__link(href='#', target='_blank') !{dataFeedInstagram.title}
+          ='\n'
           img.feed-instagram__img(src='assets/img/dummy/'+val.img, alt=dataFeedInstagram.title)/

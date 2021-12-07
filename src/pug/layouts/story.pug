@@ -3,7 +3,7 @@
   -------------------------------------------------------------------------------//
 
 //story
-.story
+.story#story
   .container
     .story__list.js-story-list
       each val, index in dataStory.list
@@ -12,7 +12,9 @@
             ='\n'
             button.story__btn(type='button') !{val.title}
             .story__icon
+              ='\n'
               span.story__icon__bar
+              ='\n'
               span.story__icon__bar
           .story__collapse
             .story__content

@@ -74,5 +74,9 @@
     text-decoration: none;
     font-family: ff(family-title);
     @include font-size(h5);
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding: 0;
   }
 }

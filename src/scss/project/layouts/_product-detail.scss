@@ -20,11 +20,10 @@
   &__main-img {
     max-width: 548px;
     margin-bottom: 24px;
-    &__item {
-    }
   }
   &__control-img {
     font-size: 0;
+    cursor: pointer;
     &__item {
       width: 47px;
       height: 47px;

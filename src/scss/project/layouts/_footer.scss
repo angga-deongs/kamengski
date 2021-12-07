@@ -10,6 +10,10 @@
   background-color: color(primary);
   padding-top: 20px;
   padding-bottom: 20px;
+  .show-filter & {
+    transition-delay: .4s;
+    transform: translateX(-140px);
+  }
   .container {
     @include clearfix;
   }
