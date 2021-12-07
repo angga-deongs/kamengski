@@ -2,14 +2,12 @@
   @name: Product
   -------------------------------------------------------------------------------//
 
-include ../components/filter.pug
-
 //product
 .product
   .container
     .product__filter
       ='\n'
-      button.product__filter__btn.btn.btn--primary(type='button') filter product
+      button.product__filter__btn.btn.btn--primary.js-product-filter(type='button') filter product
     .product__list
       each val in dataProduct.list
         -

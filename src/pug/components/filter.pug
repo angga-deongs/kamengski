@@ -1,10 +1,21 @@
+//-------------------------------------------------------------------------------
+  @name: Filter
+  -------------------------------------------------------------------------------//
+
 //filter
 .filter
   .filter__wrapper
     ul.filter__list
-      each val in dataProduct.filter
-        li.filter__item
-          ='\n'
-          a.filter__link(href='index.html') !{val.title}
-          ='\n'
-          span.filter__count !{val.count}
+      each val, index in dataProduct.filter
+        if index === 0
+          li.filter__item.filter__item--active
+            ='\n'
+            a.filter__link(href='index.html') !{val.title}
+            ='\n'
+            span.filter__count (!{val.count})
+        else
+          li.filter__item
+            ='\n'
+            a.filter__link(href='index.html') !{val.title}
+            ='\n'
+            span.filter__count (!{val.count})

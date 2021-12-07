@@ -20,4 +20,10 @@
 
 .main-site {
   padding-top: 172px;
+  transition: all .3s ease;
+  transition-delay: 0s;
+  .show-filter & {
+    transition-delay: .4s;
+    transform: translateX(-140px);
+  }
 }

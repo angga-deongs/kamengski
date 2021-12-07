@@ -6,9 +6,7 @@
 // --- components
 import {
   Footer,
-  Header,
-  Services,
-  Article
+  Header
 } from 'components';
 
 // --- WindowResize
@@ -42,8 +40,7 @@ const WindowResize = (() => {
       Header.checkClass();
       Footer.setFooter();
       Footer.checkClass();
-      Services.checkHeight();
-      Article.checkHeight();
+
     }
 
   }

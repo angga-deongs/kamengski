@@ -3,5 +3,86 @@
 /* -------------------------------------------------------------------------- */
 
 .filter {
-  display: none;
+  $f: &;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateX(275px);
+  width: 275px;
+  background-color: color(primary);
+  z-index: zi(filter);
+  padding-top: 172px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+  transition: all .3s ease;
+  transition-delay: 0s;
+  .show-filter & {
+    transition-delay: .4s;
+    transform: translateX(0);
+  }
+  &__wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0;
+    transition: all .3s ease;
+    transform: translateX(12px);
+    transition-delay: 0s;
+    .show-filter & {
+      opacity: 1;
+      transform: none;
+      transition-delay: .75s;
+    }
+  }
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  &__item {
+    position: relative;
+    padding-right: 40px;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &--active {
+      #{$f} {
+        &__link {
+          &::after {
+            transform: none;
+            transform-origin: left center;
+          }
+        }
+      }
+    }
+  }
+  &__link {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include font-size(h5);
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      transform: scaleX(0);
+      transition: transform .45s ease;
+      transform-origin: right center;
+      border-bottom: 1px solid color(black);
+    }
+    &:hover {
+      &::after {
+        transform: none;
+        transform-origin: left center;
+      }
+    }
+  }
+  &__count {
+    position: absolute;
+    right: 0;
+    @include font-size(h5);
+  }
 }

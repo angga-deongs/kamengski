@@ -8,12 +8,9 @@ import {
 import {
   WindowScroll,
   Header,
-  HeroBanner,
   WindowResize,
   Footer,
-  Services,
-  Article,
-  Testimony,
+  Product,
   Story
 } from 'components';
 
@@ -48,11 +45,8 @@ const App = (() => {
       WindowScroll.init();
       Header.init();
       Footer.init();
-      // HeroBanner.init();
 
-      // Services.init();
-      // Article.init();
-      // Testimony.init();
+      Product.init();
       Story.init();
 
     })(jQuery);

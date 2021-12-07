@@ -8,6 +8,7 @@ body {
   background-color: color(white);
   color: color(black);
   @include font-size(body);
+  transition: all .3s ease;
   &.rm-scroll {
     overflow: hidden;
     touch-action: none;

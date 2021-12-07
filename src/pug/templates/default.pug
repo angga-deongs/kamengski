@@ -127,9 +127,78 @@ html(lang='en')
 
     //- header
     include ../layouts/header.pug
+    //- main-site
+    //main-site
     .main-site.main-site--hide.js-main-site
       //- site-content
       block siteContent
+    -
+      dataProduct = {
+        filter: [
+          {
+            title: 'view all',
+            count: '100'
+          },
+          {
+            title: 'Short Slevee Tees',
+            count: '45'
+          },
+          {
+            title: 'Long Slevee Tees',
+            count: '30'
+          },
+          {
+            title: 'Sandal',
+            count: '4'
+          },
+          {
+            title: 'Bag',
+            count: '6'
+          },
+          {
+            title: 'Headwear',
+            count: '15'
+          },
+          {
+            title: 'Socks',
+            count: '6'
+          },
+          {
+            title: 'Shirts',
+            count: '24'
+          },
+          {
+            title: 'outwear',
+            count: '15'
+          },
+          {
+            title: 'Accessories',
+            count: '25'
+          },
+          {
+            title: 'Short Pants',
+            count: '10'
+          },
+          {
+            title: 'Long Pants',
+            count: '6'
+          },
+          {
+            title: 'Unofficial Jersey',
+            count: '8'
+          },
+          {
+            title: 'Boxer',
+            count: '10'
+          },
+          {
+            title: 'Shoes',
+            count: '4'
+          }
+        ]
+      }
+    //- filter
+    include ../components/filter.pug
     //- footer
     include ../layouts/footer.pug
 
