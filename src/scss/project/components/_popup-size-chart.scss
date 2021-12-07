@@ -1,0 +1,22 @@
+/* -------------------------------------------------------------------------- */
+/* Components: Popup Size Chart                                               */
+/* -------------------------------------------------------------------------- */
+
+.popup-size-chart {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: zi(popup-size-chart);
+  max-width: 600px;
+  transition: all .2s ease;
+  transition-delay: 0s;
+  .show-popup-size-chart & {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+    transition-delay: .2s;
+  }
+}

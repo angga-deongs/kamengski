@@ -11,7 +11,8 @@ import {
   WindowResize,
   Footer,
   Product,
-  Story
+  Story,
+  ProductDetail
 } from 'components';
 
 // --- App
@@ -47,6 +48,7 @@ const App = (() => {
       Footer.init();
 
       Product.init();
+      ProductDetail.init();
       Story.init();
 
     })(jQuery);

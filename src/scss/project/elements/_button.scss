@@ -10,12 +10,11 @@
   vertical-align: middle;
   text-decoration: none;
   cursor: pointer;
-  font-weight: fw(bold);
   background-color: transparent;
   transition: all .3s ease;
   @include remove-tap-highlight;
-  &--primary {
-    text-transform: uppercase;
+  &--primary,
+  &--secondary {
     position: relative;
     @include font-size(h5);
     &::after {
@@ -34,5 +33,12 @@
         transform-origin: left center;
       }
     }
+  }
+  &--primary {
+    text-transform: uppercase;
+    font-weight: fw(bold);
+  }
+  &--secondary {
+
   }
 }

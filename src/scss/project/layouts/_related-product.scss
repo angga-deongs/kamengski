@@ -3,5 +3,38 @@
 /* -------------------------------------------------------------------------- */
 
 .related-product {
-
+  border-top: 1px solid color(black);
+  padding-top: 20px;
+  padding-bottom: 140px;
+  &__head {
+    @include clearfix;
+    margin-bottom: 40px;
+  }
+  &__title {
+    float: left;
+    font-weight: fw(regular);
+    margin-bottom: 0;
+  }
+  &__link {
+    float: right;
+    font-family: ff(family-title);
+    transition: all .3s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    @include font-size(h5);
+    &:hover {
+      color: color(primary);
+    }
+  }
+  &__list {
+    @include clearfix;
+    margin-left: -14px;
+    margin-right: -14px;
+    .product__item {
+      float: left;
+      width: 25%;
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
 }

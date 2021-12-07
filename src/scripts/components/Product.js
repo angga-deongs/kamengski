@@ -15,7 +15,6 @@ const Product = (() => {
     });
 
     $('.filter').on('click', (e) => {
-
       e.stopPropagation();
     });
 
