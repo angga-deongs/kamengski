@@ -5,21 +5,60 @@
 .product-detail {
   padding-top: 88px;
   padding-bottom: 114px;
+  @include large {
+    padding-top: 56px;
+    padding-bottom: 88px;
+  }
+  @include medium {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+  @include small {
+    padding-top: 0;
+    padding-bottom: 68px;
+  }
   .container {
     @include clearfix;
   }
   &__left {
     float: left;
     width: 50%;
+    @include medium {
+      width: 100%;
+      float: none;
+      margin-bottom: 40px;
+    }
+    @include small {
+      margin-bottom: 32px;
+    }
   }
   &__right {
     float: left;
     width: 50%;
     padding-left: 100px;
+    @include large {
+      padding-left: 64px;
+    }
+    @include medium {
+      width: 100%;
+      float: none;
+      padding-left: 0;
+    }
   }
   &__main-img {
     max-width: 548px;
     margin-bottom: 24px;
+    @include medium {
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    @include small {
+      max-width: 420px;
+    }
+    @include x-small {
+      max-width: 232px;
+    }
   }
   &__control-img {
     font-size: 0;
@@ -30,6 +69,18 @@
       display: inline-block;
       vertical-align: middle;
       margin-right: 8px;
+      @include large {
+        width: 42px;
+        height: 42px;
+      }
+      @include medium {
+        width: 56px;
+        height: 56px;
+      }
+      @include x-small {
+        width: 28px;
+        height: 28px;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -42,15 +93,50 @@
   }
   &__title {
     margin-bottom: 12px;
+    @include large {
+      @include font-size(h2);
+      margin-bottom: 8px;
+    }
+    @include medium {
+      margin-bottom: 4px;
+    }
+    @include small {
+      margin-bottom: 0;
+    }
+    @include x-small {
+      @include font-size(h4);
+    }
   }
   &__price {
     font-weight: fw(regular);
     margin-bottom: 24px;
+    @include large {
+      margin-bottom: 20px;
+      @include font-size(h2);
+    }
+    @include medium {
+      margin-bottom: 16px;
+    }
+    @include x-small {
+      @include font-size(h4);
+    }
   }
   &__desc {
     margin-bottom: 24px;
     p {
       margin-bottom: 0;
+      @include large {
+        @include font-size(h4);
+      }
+      @include medium {
+        @include font-size(h5);
+      }
+      @include small {
+        @include font-size(h6);
+      }
+      @include x-small {
+        @include font-size(label);
+      }
     }
   }
   &__action {
@@ -67,15 +153,77 @@
       }
     }
   }
+  &__size-chart {
+    @include medium {
+      @include font-size(h6);
+    }
+    @include small {
+      @include font-size(label);
+    }
+  }
   &__link {
     text-decoration: none;
     text-transform: uppercase;
     color: color(primary);
     font-weight: fw(bold);
-    @include font-size(h5);
     transition: all .3s ease;
+    @include font-size(h5);
+    @include medium {
+      @include font-size(h6);
+    }
+    @include small {
+      @include font-size(label);
+    }
     &:hover {
       color: color(secondary);
+    }
+  }
+  .owl-carousel {
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      &::before {
+        font-size: 2.4rem;
+        display: block;
+        @include x-small {
+          font-size: 2rem;
+        }
+        @include retina {
+          font-size: 1.6rem;
+        }
+      }
+      span {
+        display: none;
+      }
+    }
+    .owl-prev {
+      left: -48px;
+      @include font-icon(\e900);
+      @include small {
+        left: -40px;
+      }
+      @include x-small {
+        left: -32px;
+      }
+      @include retina {
+        left: -24px;
+      }
+    }
+    .owl-next {
+      right: -48px;
+      @include font-icon(\e901);
+      @include small {
+        right: -40px;
+      }
+      @include x-small {
+        right: -32px;
+      }
+      @include retina {
+        right: -24px;
+      }
     }
   }
 }

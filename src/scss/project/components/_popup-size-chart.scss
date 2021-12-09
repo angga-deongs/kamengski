@@ -13,6 +13,9 @@
   max-width: 600px;
   transition: all .2s ease;
   transition-delay: 0s;
+  @include x-small {
+    width: 90%;
+  }
   .show-popup-size-chart & {
     opacity: 1;
     visibility: visible;

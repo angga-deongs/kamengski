@@ -36,7 +36,6 @@ const Product = (() => {
     });
   }
 
-
   // --- init
   const init = () => {
     handleClick();

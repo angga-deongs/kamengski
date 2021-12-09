@@ -6,14 +6,32 @@
   border-top: 1px solid color(black);
   padding-top: 20px;
   padding-bottom: 140px;
+  @include large {
+    padding-bottom: 120px;
+  }
+  @include medium {
+    padding-bottom: 72px;
+  }
+  @include small {
+    padding-bottom: 48px;
+  }
+  @include x-small {
+    padding-bottom: 36px;
+  }
   &__head {
     @include clearfix;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
   }
   &__title {
     float: left;
     font-weight: fw(regular);
     margin-bottom: 0;
+    @include large {
+      @include font-size(h3);
+    }
+    @include small {
+      @include font-size(h4);
+    }
   }
   &__link {
     float: right;
@@ -21,7 +39,18 @@
     transition: all .3s ease;
     padding-top: 10px;
     padding-bottom: 10px;
+    text-decoration: none;
     @include font-size(h5);
+    @include large {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    @include medium {
+      @include font-size(h6);
+    }
+    @include small {
+      @include font-size(label);
+    }
     &:hover {
       color: color(primary);
     }
@@ -30,11 +59,23 @@
     @include clearfix;
     margin-left: -14px;
     margin-right: -14px;
+    @include small {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
     .product__item {
       float: left;
       width: 25%;
       padding-left: 14px;
       padding-right: 14px;
+      @include medium {
+        width: 50%;
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+      @include small {
+        padding: 14px 4px;
+      }
     }
   }
 }

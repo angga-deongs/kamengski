@@ -67,3 +67,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Kamengski';
+  src:  url('../fonts/Kamengski.eot?r2gcph');
+  src:  url('../fonts/Kamengski.eot?r2gcph#iefix') format('embedded-opentype'),
+    url('../fonts/Kamengski.ttf?r2gcph') format('truetype'),
+    url('../fonts/Kamengski.woff?r2gcph') format('woff'),
+    url('../fonts/Kamengski.svg?r2gcph#Kamengski') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

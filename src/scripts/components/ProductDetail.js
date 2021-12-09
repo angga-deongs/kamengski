@@ -50,12 +50,18 @@ const ProductDetail = (() => {
         items: 1,
         autoplay: false,
         dots: false,
-        nav: false,
-        loop: false,
+        nav: true,
+        loop: true,
         touchDrag: true,
         mouseDrag: true,
         animateIn: 'fadeIn',
-        animateOut: 'fadeOut'
+        animateOut: 'fadeOut',
+        responsive : {
+          // breakpoint from 992 up
+          992 : {
+            nav: false
+          }
+        }
       });
     } else {
       if (_selector.hasClass('owl-carousel')) {

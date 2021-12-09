@@ -4,10 +4,12 @@
 
 $font-main: 'Roboto';
 $font-title: 'KamengskiDraft01.2-Display';
+$font-icon: 'Kamengski' !important;
 
 $font: (
   family-main: $font-main,
   family-title: $font-title,
+  family-icon: $font-icon,
   h1: (
     font-size: 3.6rem,
     line-height: 4.2rem

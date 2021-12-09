@@ -29,6 +29,7 @@
       }
       @include small {
         @include font-size(label);
+        font-weight: fw(regular);
       }
       @include x-small {
         @include font-size(small);
@@ -54,9 +55,6 @@
       }
       @include small {
         padding: 14px 4px;
-      }
-      @include retina {
-
       }
     }
   }
