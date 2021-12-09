@@ -5,20 +5,59 @@
 .product {
   $p: &;
   padding-bottom: 80px;
+  @include large {
+    padding-bottom: 72px;
+  }
+  @include medium {
+    padding-bottom: 56px;
+  }
+  @include small {
+    padding-bottom: 48px;
+  }
+  @include x-small {
+    padding-bottom: 32px;
+  }
   &__filter {
     text-align: right;
     margin-bottom: 18px;
+    @include small {
+      margin-bottom: 0;
+    }
+    &__btn {
+      @include medium {
+        @include font-size(h6);
+      }
+      @include small {
+        @include font-size(label);
+      }
+      @include x-small {
+        @include font-size(small);
+      }
+    }
   }
   &__list {
     @include clearfix;
     margin-left: -14px;
     margin-right: -14px;
+    @include small {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
   }
   #{$p} {
     &__item {
       width: 25%;
       float: left;
       padding: 24px 14px;
+      @include medium {
+        width: 50%;
+      }
+      @include small {
+        padding: 14px 4px;
+      }
+      @include retina {
+
+      }
     }
   }
 }

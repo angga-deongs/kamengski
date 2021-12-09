@@ -4,4 +4,16 @@
 
 .story {
   padding-top: 80px;
+  @include large {
+    padding-top: 72px;
+  }
+  @include medium {
+    padding-top: 56px;
+  }
+  @include small {
+    padding-top: 48px;
+  }
+  @include x-small {
+    padding-top: 32px;
+  }
 }

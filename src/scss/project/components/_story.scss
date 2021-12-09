@@ -29,6 +29,18 @@
     width: 40px;
     height: 40px;
     transform: translateY(-50%);
+    @include medium {
+      width: 28px;
+      height: 28px;
+    }
+    @include small {
+      width: 24px;
+      height: 24px;
+    }
+    @include x-small {
+      width: 16px;
+      height: 16px;
+    }
     &__bar {
       position: absolute;
       top: 50%;
@@ -46,15 +58,30 @@
   &__author {
     font-weight: fw(regular);
     margin-bottom: 40px;
+    @include medium {
+      @include font-size(h6);
+      margin-bottom: 32px;
+    }
   }
   &__btn {
     background-color: transparent;
-    padding: 20px 0;
+    padding: 20px 56px 20px 0;
     width: 100%;
     border: 0;
     outline: 0;
     text-align: left;
     @include font-size(h2);
+    @include medium {
+      padding: 16px 48px 16px 0;
+      @include font-size(h3);
+    }
+    @include small {
+      padding-right: 32px;
+      @include font-size(h4);
+    }
+    @include x-small {
+      padding-right: 24px;
+    }
   }
   &__collapse {
     display: none;
@@ -62,20 +89,65 @@
   &__content {
     @include clearfix;
     margin-bottom: 32px;
+    @include medium {
+      margin-bottom: 24px;
+    }
     &:last-child {
       margin-bottom: 0;
       padding-bottom: 100px;
+      @include large {
+        padding-bottom: 80px;
+      }
+      @include medium {
+        padding-bottom: 56px;
+      }
     }
   }
   &__left {
     float: left;
     width: 50%;
     padding-right: 16px;
+    @include medium {
+      float: none;
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 40px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
+    p, li, td, label {
+      @include medium {
+        @include font-size(h4);
+      }
+      @include small {
+        @include font-size(h5);
+      }
+      @include x-small {
+        @include font-size(h6);
+      }
+    }
   }
   &__right {
     float: right;
     width: 50%;
     padding-left: 16px;
+    @include medium {
+      float: none;
+      width: 100%;
+      padding-left: 0;
+    }
+    p, li, td, label {
+      @include medium {
+        @include font-size(h4);
+      }
+      @include small {
+        @include font-size(h5);
+      }
+      @include x-small {
+        @include font-size(h6);
+      }
+    }
   }
   &__db-img {
     font-size: 0;
@@ -90,6 +162,12 @@
       margin-top: 24px;
       margin-bottom: 0;
       @include font-size(h5);
+      @include small {
+        @include font-size(h6);
+      }
+      @include x-small {
+        @include font-size(small);
+      }
     }
   }
   &__single-img {

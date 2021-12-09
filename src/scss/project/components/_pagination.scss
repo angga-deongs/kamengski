@@ -5,6 +5,12 @@
 .pagination {
   text-align: center;
   margin-top: 96px;
+  @include large {
+    margin-top: 72px;
+  }
+  @include medium {
+    margin-top: 56px;
+  }
   ul {
     list-style: none;
     margin-bottom: 0;
@@ -15,6 +21,9 @@
     display: inline-block;
     vertical-align: middle;
     margin-right: 24px;
+    @include small {
+      margin-right: 20px;
+    }
     &:last-child {
       margin-right: 0;
     }

@@ -11,18 +11,39 @@
   z-index: zi(header);
   transition: all .3s ease;
   transition-delay: 0s;
+  @include large {
+    padding-top: 16px;
+  }
   .show-filter & {
     transition-delay: .4s;
     transform: translateX(-140px);
+    @include large {
+      transform: translateX(-64px);
+    }
+    @include medium {
+      transform: translateX(-40px);
+    }
+    @include small {
+      transform: none;
+    }
   }
   &__logo {
     position: relative;
     display: block;
     text-align: center;
     height: 0;
+    @include x-small {
+      height: initial;
+    }
     &__el {
       transform-origin: center center;
       transition: all .3s ease;
+      @include large {
+        transform: scale(.7);
+      }
+      @include small {
+        transform: scale(.5);
+      }
     }
     .window-scrolled & {
       &__el {
@@ -31,7 +52,12 @@
     }
   }
   &__menu {
-
+    @include x-small {
+      font-size: 0;
+      padding-left: 32px;
+      padding-right: 32px;
+      text-align: center;
+    }
   }
   &__list {
     list-style: none;
@@ -40,12 +66,46 @@
     z-index: zi(header-list);
     position: absolute;
     top: 54px;
+    @include x-small {
+      position: relative;
+      top: initial;
+      display: inline-block;
+      vertical-align: middle;
+    }
     &:first-child {
       left: 32px;
+      @include mq(1280px) {
+        left: 88px;
+      }
+      @include medium {
+        left: 64px;
+      }
+      @include small {
+        left: 48px;
+      }
+      @include x-small {
+        left: initial;
+        margin-right: 20px;
+      }
+      @include retina {
+        margin-right: 8px;
+      }
     }
     &:last-child {
       right: 32px;
       text-align: right;
+      @include mq(1280px) {
+        right: 88px;
+      }
+      @include medium {
+        right: 64px;
+      }
+      @include small {
+        right: 48px;
+      }
+      @include x-small {
+        right: initial;
+      }
     }
   }
   &__item {
@@ -55,14 +115,38 @@
     &:nth-child(2) {
       transition: opacity .3s ease .25s, transform .3s ease .25s, color .3s ease;
     }
+    @include large {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 32px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @include medium {
+      margin-right: 24px;
+    }
+    @include small {
+      margin-right: 20px;
+    }
+    @include retina {
+      margin-right: 8px;
+    }
     .show-filter & {
       opacity: 0;
       transform: translateY(16px);
+      @include small {
+        opacity: 1;
+        transform: none;
+      }
       &:nth-child(1) {
         transition-delay: 0.1s;
       }
       &:nth-child(2) {
         transition-delay: 0.05ms;
+        @include large {
+          transition-delay: 0.1s;
+        }
       }
     }
     &--active,
@@ -71,12 +155,15 @@
     }
   }
   &__link {
+    @include font-size(h5);
     text-decoration: none;
     font-family: ff(family-title);
-    @include font-size(h5);
     border: 0;
     outline: 0;
     background-color: transparent;
     padding: 0;
+    @include x-small {
+      @include font-size(label);
+    }
   }
 }

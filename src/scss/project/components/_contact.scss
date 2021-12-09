@@ -6,6 +6,15 @@
   padding-top: 36px;
   padding-bottom: 104px;
   border-top: 1px solid color(black);
+  @include medium {
+    padding-bottom: 56px;
+  }
+  @include small {
+    padding-bottom: 32px;
+  }
+  @include x-small {
+    padding-bottom: 28px;
+  }
   .container {
     @include clearfix;
   }
@@ -13,7 +22,28 @@
     width: 60%;
     float: left;
     max-width: 532px;
+    @include medium {
+      float: none;
+      width: 100%;
+      max-width: initial;
+      margin-bottom: 24px;
+    }
+    @include small {
+      margin-bottom: 16px;
+    }
+    @include x-small {
+      max-width: 274px;
+    }
     p {
+      @include medium {
+        @include font-size(h4);
+      }
+      @include small {
+        @include font-size(h5);
+      }
+      @include x-small {
+        @include font-size(h6);
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -24,8 +54,22 @@
     max-width: 324px;
     float: right;
     text-align: right;
+    @include medium {
+      float: none;
+      width: 100%;
+      max-width: initial;
+      text-align: left;
+    }
     p {
       margin-bottom: 0;
+    }
+    ul, li {
+      @include medium {
+        line-height: 2.4rem;
+      }
+      @include small {
+        line-height: 1.4rem;
+      }
     }
     ul {
       list-style: none;
@@ -39,16 +83,32 @@
       padding-right: 8px;
       padding-left: 8px;
       border-right: 1px solid color(black);
+      @include medium {
+        padding-left: 0;
+        margin-right: 8px;
+      }
       &:last-child {
         padding-right: 0;
         border-right: 0;
       }
     }
     a {
+      display: block;
       text-decoration: none;
       transition: all .3s ease;
       &:hover {
         color: color(primary);
+      }
+    }
+    p, a {
+      @include medium {
+        @include font-size(h5);
+      }
+      @include small {
+        @include font-size(h6);
+      }
+      @include x-small {
+        @include font-size(label);
       }
     }
   }

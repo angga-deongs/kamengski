@@ -9,10 +9,22 @@
   margin-right: auto;
   @include mq(1280px) {
     max-width: initial;
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+  @include medium {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  @include small {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  @include x-small {
     padding-left: 32px;
     padding-right: 32px;
   }
-  @include small {
+  @include retina {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -25,5 +37,14 @@
   .show-filter & {
     transition-delay: .4s;
     transform: translateX(-140px);
+    @include large {
+      transform: translateX(-64px);
+    }
+    @include medium {
+      transform: translateX(-40px);
+    }
+    @include small {
+      transform: none;
+    }
   }
 }

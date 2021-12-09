@@ -18,6 +18,9 @@
       z-index: zi(product-bg);
       transition: all .3s ease;
       transition-delay: .1s;
+      @include medium {
+        display: none;
+      }
     }
     &:hover {
       &::before {
@@ -51,6 +54,9 @@
     position: relative;
     padding-bottom: 100.39%;
     z-index: zi(product-img);
+    @include medium {
+      margin-bottom: 8px;
+    }
     &__el {
       position: absolute;
       top: 0;
@@ -68,6 +74,13 @@
     transform: translate(-50%, -50%);
     text-align: center;
     max-width: 172px;
+    @include medium {
+      position: relative;
+      transform: none;
+      left: initial;
+      top: initial;
+      max-width: initial;
+    }
   }
   &__title {
     opacity: 0;
@@ -75,6 +88,19 @@
     transition: all .3s ease;
     margin-bottom: 12px;
     transition-delay: 0s;
+    @include medium {
+      opacity: 1;
+      transform: none;
+      margin-bottom: 8px;
+      @include font-size(h5);
+    }
+    @include small {
+      margin-bottom: 4px;
+      @include font-size(h6);
+    }
+    @include x-small {
+      @include font-size(label);
+    }
   }
   &__price {
     opacity: 0;
@@ -83,5 +109,16 @@
     margin-bottom: 0;
     transition-delay: 0s;
     font-weight: fw(regular);
+    @include medium {
+      opacity: 1;
+      transform: none;
+      @include font-size(h5);
+    }
+    @include small {
+      @include font-size(h6);
+    }
+    @include x-small {
+      @include font-size(small);
+    }
   }
 }

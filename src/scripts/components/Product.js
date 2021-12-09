@@ -3,6 +3,11 @@
 @description: Product
 --------------------------------------------------------------------------------- */
 
+// --- utilities
+import {
+  Scrolllable
+} from 'utilities';
+
 // --- Product
 const Product = (() => {
 
@@ -11,6 +16,7 @@ const Product = (() => {
     const _selector = $('.js-product-filter');
     _selector.on('click', (e) => {
       $('body').addClass('show-filter');
+      Scrolllable.disable();
       e.stopPropagation();
     });
 
@@ -24,6 +30,7 @@ const Product = (() => {
   const handleClose = () => {
     $('body').on('click', () => {
       if ($('body').hasClass('show-filter')) {
+        Scrolllable.enable();
         $('body').removeClass('show-filter');
       }
     });

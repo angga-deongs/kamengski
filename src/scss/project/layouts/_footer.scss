@@ -10,9 +10,31 @@
   background-color: color(primary);
   padding-top: 20px;
   padding-bottom: 20px;
+  @include medium {
+    position: relative;
+    bottom: initial;
+    left: initial;
+  }
+  @include small {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  @include x-small {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
   .show-filter & {
     transition-delay: .4s;
     transform: translateX(-140px);
+    @include large {
+      transform: translateX(-64px);
+    }
+    @include medium {
+      transform: translateX(-40px);
+    }
+    @include small {
+      transform: none;
+    }
   }
   .container {
     @include clearfix;
@@ -24,6 +46,18 @@
   &__info {
     float: right;
     margin-bottom: 0;
+  }
+  &__copyright,
+  &__info {
+    @include medium {
+      @include font-size(h6);
+    }
+    @include small {
+      @include font-size(small);
+    }
+    @include x-small {
+      @include font-size(x-small);
+    }
   }
 }
 
@@ -43,5 +77,11 @@
     opacity: 1;
     visibility: visible;
     transition-delay: 0s;
+  }
+  @include medium {
+    .show-filter & {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
