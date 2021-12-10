@@ -16,11 +16,22 @@ const Header = (() => {
     const _selector = $('.js-header-menu button.header__link');
     _selector.on('click', (e) => {
       let _target = $(e.currentTarget).attr('data-target');
-      let _offsetTop = $('#'+_target).offset().top;
+      if (_target === 'product') {
+        if ($('body').hasClass('start-animation')) {
+          let _offsetTop = $('#'+_target).offset().top;
+          $('html, body').animate({
+            scrollTop: _offsetTop
+          }, 1000);
+        } else {
+          $('body').addClass('start-animation');
+        }
+      } else {
+        let _offsetTop = $('#'+_target).offset().top;
+        $('html, body').animate({
+          scrollTop: _offsetTop
+        }, 1000);
+      }
 
-      $('html, body').animate({
-        scrollTop: _offsetTop
-      }, 'slow');
       e.preventDefault();
     });
   }

@@ -31,27 +31,28 @@
 
 //header
 .header
-  //header-logo
-  .header__logo
-    ='\n'
-    img.header__logo__el(src='assets/img/logo/'+dataHeader.logo, alt='kamengski')/
-  //header-menu
-  .header__menu.js-header-menu
-    if isProduct
-      ul.header__list
-        each val in dataHeader.menuLeft
-          li.header__item
-            a.header__link(href=val.link) !{val.title}
-      ul.header__list
-        each val in dataHeader.menuRight
-          li.header__item
-            button.header__link(type='button', data-target=val.to) !{val.title}
-    else
-      ul.header__list
-        each val in dataHeader.menuLeft
-          li.header__item
-            button.header__link(type='button', data-target=val.to) !{val.title}
-      ul.header__list
-        each val in dataHeader.menuRight
-          li.header__item
-            button.header__link(type='button', data-target=val.to) !{val.title}
+  .header__content
+    //header-logo
+    .header__logo
+      ='\n'
+      img.header__logo__el(src='assets/img/logo/'+dataHeader.logo, alt='kamengski')/
+    //header-menu
+    .header__menu.js-header-menu
+      if isProduct
+        ul.header__list
+          each val in dataHeader.menuLeft
+            li.header__item
+              a.header__link(href=val.link) !{val.title}
+        ul.header__list
+          each val in dataHeader.menuRight
+            li.header__item
+              button.header__link(type='button', data-target=val.to) !{val.title}
+      else
+        ul.header__list
+          each val in dataHeader.menuLeft
+            li.header__item
+              button.header__link(type='button', data-target=val.to) !{val.title}
+        ul.header__list
+          each val in dataHeader.menuRight
+            li.header__item
+              button.header__link(type='button', data-target=val.to) !{val.title}

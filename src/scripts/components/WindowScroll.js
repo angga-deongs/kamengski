@@ -3,6 +3,11 @@
 @description: WindowScroll
 --------------------------------------------------------------------------------- */
 
+// --- utilities
+import {
+  Scrolllable
+} from 'utilities';
+
 // --- WindowScroll
 const WindowScroll = (() => {
   let _lastScrollTop = 0;
@@ -33,9 +38,9 @@ const WindowScroll = (() => {
     _lastScrollTop = _scrollTop;
 
     if ($(window).scrollTop() > 20) {
-      $('body').addClass('window-scrolled');
+      $('body').addClass('window-scrolled start-animation');
     } else {
-      $('body').removeClass('window-scrolled');
+      $('body').removeClass('window-scrolled start-animation');
     }
 
   }

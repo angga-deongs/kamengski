@@ -15,21 +15,21 @@ const Article = (() => {
   const handleCheckHeight = () => {
     let _height = 0;
     handleResetHeight();
-    $('.js-article-list .article__item').each((i, e) => {
-      if (_height < $(e).find('.article__txt').height()) {
-        _height = $(e).find('.article__txt').height();
+    $('.js-product-list .product__item').each((i, e) => {
+      if (_height < $(e).find('.product__box').height()) {
+        _height = $(e).find('.product__box').height();
       }
     });
-    $('.article__txt').height(_height);
+    $('.js-product-list .product__box').height(_height);
   }
 
   // --- handleResetHeight
   const handleResetHeight = () => {
-    let _attr = $('.article__txt').attr('style');
+    let _attr = $('.js-product-list .product__box').attr('style');
     // For some browsers, `attr` is undefined; for others,
     // `attr` is false.  Check for both.
     if (typeof _attr !== 'undefined' && _attr !== false) {
-      $('.article__txt').removeAttr('style');
+      $('.js-product-list .product__box').removeAttr('style');
     }
   }
 

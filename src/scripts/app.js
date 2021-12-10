@@ -14,6 +14,7 @@ import {
   Story,
   ProductDetail
 } from 'components';
+import Article from './components/Article';
 
 // --- App
 const App = (() => {
@@ -47,6 +48,7 @@ const App = (() => {
       Header.init();
       Footer.init();
 
+      Article.init();
       Product.init();
       ProductDetail.init();
       Story.init();

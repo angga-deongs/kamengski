@@ -3,86 +3,52 @@
 /* -------------------------------------------------------------------------- */
 
 .header {
-  position: relative;
-  padding-top: 100vh;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding-top: 28px;
   z-index: zi(header);
-  transition: all 2s ease;
-  @include small {
-    transition: all 1s ease;
+  transition: all .3s ease;
+  transition-delay: 0s;
+  @include large {
+    padding-top: 16px;
   }
-  .start-animation & {
-    padding-top: 32px;
-  }
-  &__content {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    transition: all 1s ease;
-    transition-delay: 0s;
-    @include x-small {
-      height: calc(100% - 68px);
-      padding-top: 24px;
-      .start-animation & {
-        height: 136px;
-      }
+  .show-filter & {
+    transition-delay: .4s;
+    transform: translateX(-140px);
+    @include large {
+      transform: translateX(-64px);
     }
-    .show-filter & {
-      transition-delay: .4s;
-      transform: translateX(-140px);
-      @include large {
-        transform: translateX(-64px);
-      }
-      @include medium {
-        transform: translateX(-40px);
-      }
-      @include small {
-        transform: none;
-      }
+    @include medium {
+      transform: translateX(-40px);
+    }
+    @include small {
+      transform: none;
     }
   }
   &__logo {
-    position: fixed;
-    height: calc(100% - 40px);
-    top: 40px;
-    left: 50%;
-    width: 100%;
+    position: relative;
     display: block;
-    padding: 0 56px 48px 56px;
-    transition: all 2s ease;
-    transform: translateX(-50%);
-    @include small {
-      top: 32px;
-      padding: 0 48px 32px 48px;
-      transition: all 1s ease;
-      height: calc(100% - 32px);
-    }
+    text-align: center;
+    height: 0;
     @include x-small {
-      top: initial;
-      left: initial;
-      transform: none;
-      margin: 0 auto 24px;
-      position: relative;
-      padding: 0 32px;
-      transition: all 1s ease;
-    }
-    .start-animation & {
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: 0;
-      height: 70px;
-      width: 180px;
-      @include small {
-        width: 152px;
-        height: 60px;
-      }
+      height: initial;
     }
     &__el {
-      width: 100%;
-      height: 100%;
       transform-origin: center center;
-      object-fit: contain;
-      object-position: bottom center;
+      transition: all .3s ease;
+      @include large {
+        transform: scale(.7);
+      }
+      @include small {
+        transform: scale(.5);
+      }
+    }
+    .window-scrolled & {
+      &__el {
+        transform: scale(.6);
+      }
     }
   }
   &__menu {
@@ -99,7 +65,7 @@
     margin-bottom: 0;
     z-index: zi(header-list);
     position: absolute;
-    top: 48px;
+    top: 54px;
     @include x-small {
       position: relative;
       top: initial;
@@ -196,13 +162,6 @@
     outline: 0;
     background-color: transparent;
     padding: 0;
-    transition: all .3s ease;
-    &:hover {
-      color: color(primary);
-      @include medium {
-        color: color(black);
-      }
-    }
     @include x-small {
       @include font-size(label);
     }
