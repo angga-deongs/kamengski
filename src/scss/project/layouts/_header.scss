@@ -3,29 +3,37 @@
 /* -------------------------------------------------------------------------- */
 
 .header {
-  position: relative;
-  padding-top: 100vh;
   z-index: zi(header);
-  transition: all 2s ease;
-  @include small {
-    transition: all 1s ease;
+  padding-top: 32px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  @include x-small {
+    padding-top: 24px;
   }
-  .start-animation & {
-    padding-top: 32px;
+  .home & {
+    position: relative;
+    padding-top: 100vh;
+    transition: all 2s ease;
+    @include medium {
+      padding-top: 32px;
+      transition: none;
+    }
   }
   &__content {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
     transition: all .3s ease;
     transition-delay: 0s;
-    @include x-small {
-      height: calc(100% - 68px);
-      padding-top: 24px;
-      transition: all 1s ease;
-      .start-animation & {
-        height: 136px;
+    @include medium {
+      position: static;
+    }
+    .home & {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+      @include medium {
+        position: static;
       }
     }
     .show-filter & {
@@ -35,37 +43,41 @@
         transform: translateX(-64px);
       }
       @include medium {
-        transform: translateX(-40px);
-      }
-      @include small {
         transform: none;
       }
     }
   }
   &__logo {
-    position: fixed;
-    height: calc(100% - 40px);
-    top: 40px;
-    left: 50%;
-    width: 100%;
-    display: block;
-    padding: 0 56px 48px 56px;
-    transition: all 2s ease;
-    transform: translateX(-50%);
-    @include small {
-      top: 32px;
-      padding: 0 48px 32px 48px;
-      transition: all 1s ease;
-      height: calc(100% - 32px);
+    height: 110px;
+    @include medium {
+      position: static;
+      width: 100%;
+      height: 60px;
+      padding: 0;
     }
     @include x-small {
-      top: initial;
-      left: initial;
-      transform: none;
-      margin: 0 auto 24px;
-      position: relative;
-      padding: 0 32px;
-      transition: all 1s ease;
+      height: 56px;
+      margin-bottom: 24px;
+    }
+    .home & {
+      position: fixed;
+      height: calc(100% - 40px);
+      top: 40px;
+      left: 50%;
+      width: 100%;
+      display: block;
+      padding: 0 56px 48px 56px;
+      transition: all 2s ease;
+      transform: translateX(-50%);
+      @include medium {
+        position: static;
+        height: 60px;
+        transform: none;
+        transition: none;
+      }
+      @include x-small {
+        height: 56px;
+      }
     }
     .start-animation & {
       padding-left: 0;
@@ -81,16 +93,18 @@
     &__el {
       width: 100%;
       height: 100%;
-      transform-origin: center center;
+      transform-origin: top center;
       object-fit: contain;
       object-position: bottom center;
+      transition: all .3s ease;
+      .window-scrolled & {
+        transform: scale(.7);
+      }
     }
   }
   &__menu {
     @include x-small {
       font-size: 0;
-      padding-left: 32px;
-      padding-right: 32px;
       text-align: center;
     }
   }
@@ -170,7 +184,7 @@
     .show-filter & {
       opacity: 0;
       transform: translateY(16px);
-      @include small {
+      @include medium {
         opacity: 1;
         transform: none;
       }
