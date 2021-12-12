@@ -7,7 +7,7 @@
 import {
   Footer,
   Header,
-  Article
+  Product
 } from 'components';
 
 // --- WindowResize
@@ -40,7 +40,7 @@ const WindowResize = (() => {
       $('body').removeClass('hold-transition');
       Header.checkClass();
       Footer.setFooter();
-      Article.checkHeight();
+      Product.checkHeight();
 
     }
 

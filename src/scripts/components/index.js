@@ -8,9 +8,8 @@ import WindowResize from "./WindowResize";
 import Header from "./Header";
 import Footer from "./Footer";
 import Product from "./Product";
-import Story from "./Story";
 import ProductDetail from "./ProductDetail";
-import Article from "./Article";
+import Story from "./Story";
 
 export {
   WindowScroll,
@@ -18,7 +17,6 @@ export {
   Header,
   Footer,
   Product,
-  Story,
   ProductDetail,
-  Article
+  Story
 };
