@@ -37,8 +37,8 @@ const WindowScroll = (() => {
 
     _lastScrollTop = _scrollTop;
 
-    if (_scrollTop > 20) {
-      $('body').addClass('window-scrolled');
+    if (_scrollTop > 40) {
+      $('body').addClass('window-scrolled run-scroll-animation');
     } else {
       $('body').removeClass('window-scrolled');
     }

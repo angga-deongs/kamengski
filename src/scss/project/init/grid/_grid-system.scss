@@ -34,6 +34,13 @@
   padding-top: 172px;
   transition: all .3s ease;
   transition-delay: 0s;
+  .home .show-animation & {
+    padding-top: 100vh;
+    transition: padding 2s ease, transform .3s ease;
+  }
+  .home .show-animation.run-scroll-animation & {
+    padding-top: 172px;
+  }
   .show-filter & {
     transition-delay: .4s;
     transform: translateX(-140px);

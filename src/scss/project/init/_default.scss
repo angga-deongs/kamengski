@@ -7,13 +7,14 @@ body {
   font-weight: fw(light);
   background-color: color(white);
   color: color(black);
-  @include font-size(body);
   transition: all .3s ease;
+  @include font-size(body);
   &.rm-scroll {
     overflow: hidden;
     touch-action: none;
   }
   &.hold-transition {
+    opacity: 0;
     *,
     &::before,
     &::after {

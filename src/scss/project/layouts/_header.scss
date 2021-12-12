@@ -9,46 +9,33 @@
   left: 0;
   top: 0;
   width: 100%;
+  transition: all .3s ease;
+  transition-delay: 0s;
   @include x-small {
     padding-top: 24px;
   }
-  .home & {
-    position: relative;
-    padding-top: 100vh;
-    transition: all 2s ease;
+  .show-filter & {
+    transition-delay: .4s;
+    transform: translateX(-140px);
+    @include large {
+      transform: translateX(-64px);
+    }
     @include medium {
-      padding-top: 32px;
-      transition: none;
+      transform: translateX(-40px);
+    }
+    @include small {
+      transform: none;
     }
   }
   &__content {
-    transition: all .3s ease;
-    transition-delay: 0s;
-    @include medium {
-      position: static;
-    }
-    .home & {
-      position: fixed;
-      width: 100%;
-      left: 0;
-      top: 0;
-      @include medium {
-        position: static;
-      }
-    }
-    .show-filter & {
-      transition-delay: .4s;
-      transform: translateX(-140px);
-      @include large {
-        transform: translateX(-64px);
-      }
-      @include medium {
-        transform: none;
-      }
-    }
+    height: 0;
   }
   &__logo {
+    position: relative;
     height: 110px;
+    width: 280px;
+    margin: 0 auto;
+    transition: padding 2s ease, height 2s ease, width 2s ease;
     @include medium {
       position: static;
       width: 100%;
@@ -59,35 +46,19 @@
       height: 56px;
       margin-bottom: 24px;
     }
-    .home & {
-      position: fixed;
-      height: calc(100% - 40px);
-      top: 40px;
-      left: 50%;
+    .home .show-animation & {
+      height: 92vh;
       width: 100%;
-      display: block;
-      padding: 0 56px 48px 56px;
-      transition: all 2s ease;
-      transform: translateX(-50%);
-      @include medium {
-        position: static;
-        height: 60px;
-        transform: none;
-        transition: none;
-      }
-      @include x-small {
-        height: 56px;
-      }
+      padding-left: 48px;
+      padding-right: 48px;
     }
-    .start-animation & {
-      padding-left: 0;
-      padding-right: 0;
-      padding-bottom: 0;
-      height: 70px;
-      width: 180px;
-      @include small {
-        width: 152px;
+    .home .show-animation.run-scroll-animation & {
+      height: 110px;
+      width: 280px;
+      padding: 0;
+      @include medium {
         height: 60px;
+        width: initial;
       }
     }
     &__el {
@@ -99,6 +70,9 @@
       transition: all .3s ease;
       .window-scrolled & {
         transform: scale(.7);
+        @include medium {
+          transform: none;
+        }
       }
     }
   }
@@ -113,7 +87,7 @@
     padding-left: 0;
     margin-bottom: 0;
     z-index: zi(header-list);
-    position: absolute;
+    position: fixed;
     top: 48px;
     @include x-small {
       position: relative;
