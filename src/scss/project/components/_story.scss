@@ -176,5 +176,17 @@
       width: 100%;
       height: initial;
     }
+    p {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 0;
+      @include font-size(h5);
+      @include small {
+        @include font-size(h6);
+      }
+      @include x-small {
+        @include font-size(small);
+      }
+    }
   }
 }

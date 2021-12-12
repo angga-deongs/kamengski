@@ -14,6 +14,8 @@ const Product = (() => {
   // --- handleSet
   const handleSet = () => {
     handleCheckHeight();
+    $('.prev.page-numbers').parents('li').remove();
+    $('.next.page-numbers').parents('li').remove();
   }
 
   // --- handleCheckHeight
