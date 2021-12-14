@@ -63,6 +63,8 @@ const Header = (() => {
     });
   }
 
+  const _url = new URL(window.location);
+
   const handleScroll = () => {
     $(window).on('scroll', () => {
       $.each(_section, (e, elem) => {
@@ -75,7 +77,7 @@ const Header = (() => {
         $("[data-target='"+elem.id+"']").parents('.header__item').addClass('header__item--active');
 
         if( _placement.top < window.innerHeight && _placementBottom > 0) {
-          history.pushState({}, '', '#' + elem.id);
+          history.pushState({}, '', _url+'#' + elem.id);
           return false; /* Exit $.each loop */
         };
       });

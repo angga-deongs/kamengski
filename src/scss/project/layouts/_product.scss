@@ -4,19 +4,6 @@
 
 .product {
   $p: &;
-  padding-bottom: 80px;
-  @include large {
-    padding-bottom: 72px;
-  }
-  @include medium {
-    padding-bottom: 56px;
-  }
-  @include small {
-    padding-bottom: 48px;
-  }
-  @include x-small {
-    padding-bottom: 32px;
-  }
   &__filter {
     text-align: right;
     margin-bottom: 16px;

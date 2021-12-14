@@ -3,17 +3,17 @@
 /* -------------------------------------------------------------------------- */
 
 .story {
-  padding-top: 80px;
+  padding-top: 160px;
   @include large {
-    padding-top: 72px;
+    padding-top: 144px;
   }
   @include medium {
-    padding-top: 56px;
+    padding-top: 112px;
   }
   @include small {
-    padding-top: 48px;
+    padding-top: 96px;
   }
   @include x-small {
-    padding-top: 32px;
+    padding-top: 64px;
   }
 }
