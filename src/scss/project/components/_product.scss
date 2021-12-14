@@ -78,6 +78,7 @@
       position: relative;
       transform: none;
       left: initial;
+      right: initial;
       top: initial;
       max-width: initial;
     }
@@ -88,6 +89,7 @@
     transition: all .3s ease;
     margin-bottom: 12px;
     transition-delay: 0s;
+    @include multiline-ellipsis(2);
     @include medium {
       opacity: 1;
       transform: none;

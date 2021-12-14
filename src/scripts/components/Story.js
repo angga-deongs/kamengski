@@ -8,6 +8,10 @@ const Story = (() => {
   // handleSet
   const handleSet = () => {
     const _selector =  $('.js-story-list');
+    if (_selector.length) {
+      _selector.find('.story__item:first').addClass('story__item--active');
+      _selector.find('.story__item:first .story__collapse').slideDown('slow');
+    }
 
   }
   // handleClick
@@ -23,10 +27,9 @@ const Story = (() => {
         const _index = _this.parents('.story__item').attr('data-index');
         const _height = _this.parents('.story__title').height();
         const _indexHeight = _index * _height;
-        console.log(_index);
-        console.log(_indexHeight);
+        const _logoHeight = $('.header__logo').height() + 40;
         $('html, body').animate({
-          scrollTop: $('.story__list').offset().top + _indexHeight
+          scrollTop: $('.story__list').offset().top + _indexHeight - _logoHeight
         }, 750, () => {
           if (_this.parents('.story__item').siblings().hasClass('story__item--active')) {
             _this.parents('.story__item').siblings().removeClass('story__item--active').find('.story__collapse').slideUp('slow');
@@ -41,6 +44,7 @@ const Story = (() => {
 
   // init
   const init = () => {
+    handleSet();
     handleClick();
   }
 

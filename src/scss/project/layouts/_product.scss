@@ -19,20 +19,22 @@
   }
   &__filter {
     text-align: right;
-    margin-bottom: 18px;
-    @include small {
-      margin-bottom: 0;
+    margin-bottom: 16px;
+    @include medium {
+      text-align: center;
     }
     &__btn {
       @include medium {
         @include font-size(h6);
-      }
-      @include small {
-        @include font-size(label);
         font-weight: fw(regular);
       }
-      @include x-small {
-        @include font-size(small);
+      .show-filter & {
+        opacity: 0;
+        transform: translateY(16px);
+        @include medium {
+          opacity: 1;
+          transform: none;
+        }
       }
     }
   }

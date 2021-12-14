@@ -15,7 +15,7 @@ const Header = (() => {
   const handleSet = () => {
     $(window).on('load', () => {
     if (!!$.cookie('first-open-web')) {
-      console.log(1);
+      // do this
     } else {
       $('body').css('opacity','0');
       $('body').addClass('show-animation');
@@ -56,45 +56,66 @@ const Header = (() => {
     });
   }
 
-  // --- handleMobileNav
-  const handleMobileNav = () => {
-    $('.js-nav').on('click', (e) => {
-      var _this = $(e.currentTarget);
-      if (_this.hasClass('show')) {
-        Scrolllable.enable();
-        $('body').removeClass('show-nav');
-        _this.removeClass('show')
-      } else {
-        Scrolllable.disable();
-        $('body').addClass('show-nav');
-        _this.addClass('show')
+  // --- handleScroll
+  const handleScroll = () => {
+    const _product = $('.product').offset().top;
+    const _productHeight = $('.product').offset().top + $('.product').height();
+    const _story = $('.story').offset().top;
+    const _storyHeight = $('.story').offset().top + $('.story').height();
+    const _feedInstagram = $('.feed-instagram').offset().top;
+    const _feedInstagramHeight = $('.feed-instagram').offset().top + $('.feed-instagram').height();
+    const _contact = $('.contact').offset().top;
+    const _contactHeight = $('.contact').offset().top + $('.contact').height();
+    const _window = $(window);
+    console.log(_story);
+    console.log(_storyHeight);
+    _window.scroll(() => {
+      if ($('.product').length) {
+        if (_window.scrollTop() >= _product && _window.scrollTop() <= _productHeight) {
+          $('.header__item').removeClass('header__item--active');
+          $('[data-target="product"]').parents('.header__item').addClass('header__item--active');
+        } else {
+          $('[data-target="product"]').parents('.header__item').removeClass('header__item--active');
+        }
+      }
+      if ($('.story').length) {
+        if (_window.scrollTop() >= _story && _window.scrollTop() <= _storyHeight) {
+          $('.header__item').removeClass('header__item--active');
+          $('[data-target="story"]').parents('.header__item').addClass('header__item--active');
+        } else {
+          $('[data-target="story"]').parents('.header__item').removeClass('header__item--active');
+        }
+      }
+      if ($('.feed-instagram').length) {
+        if (_window.scrollTop() >= _feedInstagram && _window.scrollTop() < _feedInstagramHeight) {
+          $('.header__item').removeClass('header__item--active');
+          $('[data-target="update"]').parents('.header__item').addClass('header__item--active');
+        } else {
+          $('[data-target="update"]').parents('.header__item').removeClass('header__item--active');
+        }
+      }
+      if ($('.contact').length) {
+        if (_window.scrollTop() >= _contact && _window.scrollTop() < _contactHeight) {
+          $('.header__item').removeClass('header__item--active');
+          $('[data-target="contact"]').parents('.header__item').addClass('header__item--active');
+        } else {
+          $('[data-target="contact"]').parents('.header__item').removeClass('header__item--active');
+        }
       }
     });
-  }
-
-  // --- handleCheckClass
-  const handleCheckClass = () => {
-    if ($(window).width() >= 992) {
-      if ($('.js-nav').hasClass('show')) {
-        Scrolllable.enable();
-        $('body').removeClass('show-nav');
-        $('.js-nav').removeClass('show')
-      }
-    }
   }
 
   // --- init
   const init = () => {
     handleSet();
     handleClick();
-    handleMobileNav();
+    handleScroll();
 
   }
 
   // --- return
   return {
-    init,
-    checkClass: handleCheckClass
+    init
   }
 
 })();

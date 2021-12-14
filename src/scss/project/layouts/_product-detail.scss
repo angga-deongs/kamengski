@@ -184,10 +184,18 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 32px;
+      width: 50%;
+      height: 100%;
+      opacity: 0;
+      @include medium {
+        width: 32px;
+        opacity: 1;
+      }
       &::before {
-        font-size: 2.4rem;
-        display: block;
+        @include medium {
+          font-size: 2.4rem;
+          display: block;
+        }
         @include x-small {
           font-size: 2rem;
         }
@@ -200,8 +208,16 @@
       }
     }
     .owl-prev {
-      left: -48px;
       @include font-icon(\e900);
+      &:hover {
+        cursor: url("../../assets/img/bg/arrow-left.svg"), pointer;
+        @include medium {
+          cursor: initial;
+        }
+      }
+      @include medium {
+        left: -48px;
+      }
       @include small {
         left: -40px;
       }
@@ -213,8 +229,17 @@
       }
     }
     .owl-next {
-      right: -48px;
+      right: 0;
       @include font-icon(\e901);
+      &:hover {
+        cursor: url("../../assets/img/bg/arrow-right.svg"), pointer;
+        @include medium {
+          cursor: initial;
+        }
+      }
+      @include medium {
+        right: -48px;
+      }
       @include small {
         right: -40px;
       }

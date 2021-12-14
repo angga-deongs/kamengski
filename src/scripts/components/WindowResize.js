@@ -38,7 +38,6 @@ const WindowResize = (() => {
       _timeout = false;
       // Run Function on Resize end
       $('body').removeClass('hold-transition');
-      Header.checkClass();
       Footer.setFooter();
       Product.checkHeight();
 

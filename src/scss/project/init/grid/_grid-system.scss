@@ -34,6 +34,12 @@
   padding-top: 172px;
   transition: all .3s ease;
   transition-delay: 0s;
+  @include medium {
+    padding-top: 148px;
+  }
+  @include small {
+    padding-top: 124px;
+  }
   .home .show-animation & {
     padding-top: 100vh;
     transition: padding 2s ease, transform .3s ease 0s;

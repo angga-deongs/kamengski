@@ -8,16 +8,12 @@
   left: 0;
   width: 100%;
   background-color: color(primary);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   @include medium {
     position: relative;
     bottom: initial;
     left: initial;
-  }
-  @include small {
-    padding-top: 16px;
-    padding-bottom: 16px;
   }
   @include x-small {
     padding-top: 8px;
@@ -49,11 +45,9 @@
   }
   &__copyright,
   &__info {
-    @include medium {
-      @include font-size(h6);
-    }
+    @include font-size(h5);
     @include small {
-      @include font-size(small);
+      @include font-size(label);
     }
     @include x-small {
       @include font-size(x-small);

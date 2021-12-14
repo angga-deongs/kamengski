@@ -55,13 +55,7 @@ const ProductDetail = (() => {
         touchDrag: true,
         mouseDrag: true,
         animateIn: 'fadeIn',
-        animateOut: 'fadeOut',
-        responsive : {
-          // breakpoint from 992 up
-          992 : {
-            nav: false
-          }
-        }
+        animateOut: 'fadeOut'
       });
     } else {
       if (_selector.hasClass('owl-carousel')) {
