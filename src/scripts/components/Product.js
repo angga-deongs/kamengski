@@ -35,7 +35,9 @@ const Product = (() => {
       }
     });
     $('.js-product-list .product__box').height(_height);
-    $('.js-product-list .product__title').height(_heightTitle);
+    if ($(window).width() < 992) {
+      $('.js-product-list .product__title').height(_heightTitle);
+    }
   }
 
   // --- handleResetHeight
