@@ -54,6 +54,10 @@
       width: 100%;
       padding-left: 48px;
       padding-right: 48px;
+      @include medium {
+        height: 60px;
+        width: initial;
+      }
     }
     .home .show-animation.run-scroll-animation & {
       height: 110px;

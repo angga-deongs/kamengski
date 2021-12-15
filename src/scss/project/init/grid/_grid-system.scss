@@ -43,6 +43,12 @@
   .home .show-animation & {
     padding-top: 100vh;
     transition: padding 2s ease, transform .3s ease 0s;
+    @include medium {
+      padding-top: 148px;
+    }
+    @include small {
+      padding-top: 124px;
+    }
   }
   .home .show-animation.show-filter & {
     transition: padding 2s ease, transform .3s ease 0.4s;
