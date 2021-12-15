@@ -72,14 +72,21 @@ const Header = (() => {
           let _id = $('#'+elem.id);
           let _target = _id[0];
           let _placement = _target.getBoundingClientRect();
-          let _placementBottom = _placement.bottom;
+          let _placementBottom = _placement.bottom - 10;
 
           $('.header__item').removeClass('header__item--active');
           $("[data-target='"+elem.id+"']").parents('.header__item').addClass('header__item--active');
 
           if( _placement.top < window.innerHeight && _placementBottom > 0) {
-            history.pushState({}, '', _url+'#' + elem.id);
-            return false; /* Exit $.each loop */
+            if(window.location.hash) {
+              const _urlSplit = window.location.href.split('#')[0];
+              history.replaceState({}, '', _urlSplit+'#' + elem.id);
+              return false; /* Exit $.each loop */
+            } else {
+              history.pushState({}, '', _url+'#' + elem.id);
+              return false; /* Exit $.each loop */
+            }
+
           };
         });
       }
