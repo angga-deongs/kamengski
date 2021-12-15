@@ -11,6 +11,7 @@
   text-decoration: none;
   background-color: transparent;
   transition: all .3s ease;
+  cursor: none;
   @include remove-tap-highlight;
   &--primary,
   &--secondary {
