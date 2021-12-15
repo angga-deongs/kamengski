@@ -13,9 +13,10 @@ const Header = (() => {
 
   // --- handleSet
   const handleSet = () => {
+    $('body').css('opacity','0');
     $(window).on('load', () => {
       if (!!$.cookie('first-open-web')) {
-        // do this
+        $('body').css('opacity','1');
       } else {
         $('body').css('opacity','0');
         $('body').addClass('show-animation');
