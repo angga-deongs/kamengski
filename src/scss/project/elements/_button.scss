@@ -15,6 +15,7 @@ button {
   background-color: transparent;
   transition: all .3s ease;
   cursor: none;
+  color: color(black);
   @include remove-tap-highlight;
   &--primary,
   &--secondary {
