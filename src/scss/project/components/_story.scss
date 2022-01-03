@@ -189,4 +189,34 @@
       }
     }
   }
+  &__embed {
+    margin-bottom: 24px;
+    &__container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    p {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 0;
+      @include font-size(h5);
+      @include small {
+        @include font-size(h6);
+      }
+      @include x-small {
+        @include font-size(small);
+      }
+    }
+  }
 }
